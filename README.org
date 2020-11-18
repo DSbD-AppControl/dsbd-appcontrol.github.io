@@ -1,0 +1,75 @@
+#+TITLE: The AppControl Website.
+
+The website is a static website using [[http://jaspervdj.be/hakyll/][Haykll]], and is published in the meantime using GitHub.
+
+Hakyll generates a custom executable for transforming the markdown pages, and other material, into static HTML.
+
+* Dependencies
+
+To build the website you need to install the Stack tool, we will use this to install all the dependencies required for site construction.
+
+Information on Stack and how to install is availalbe online.
+
+https://docs.haskellstack.org/en/stable/README/#how-to-install
+
+Once stack is installed navigate to the project's root and run:
+
+#+BEGIN_SRC sh
+stack setup
+#+END_SRC
+
+* Workflow
+
+Always work in the ~source~ branch.
+
+1. To preview your changes:
+
+#+BEGIN_SRC sh
+$ stack build
+$ stack exec site build
+$ stack exec site watch
+#+END_SRC
+
+Point your web browser to http://127.0.0.1:8000/ .
+
+2. To commit changes to the repo and update the
+   https://border-patrol.github.io/ site:
+
+#+BEGIN_SRC sh
+$ git add <changed files>
+$ git commit -m "useful message"
+$ make build
+$ make deploy
+$ git push
+#+END_SRC
+
+* Further details
+
+** Building
+
+ We use a =Makefile= to make construction and deployment easy.
+
+ #+BEGIN_SRC sh
+ make build
+ #+END_SRC
+
+ The =Makefile= is a simple overlay for many Hakyll commands as executed using stack.
+
+** Deployment
+
+ Deployment is achieved with the following =Makefile= command:
+
+ #+BEGIN_SRC sh
+ make deploy
+ #+END_SRC
+
+ This command builds the static site in =_site= and moves it to the =master= branch which github uses to publish the site.
+
+ Please note only those with a commit bit will be allowed to push to the site.
+
+* References
+
+Useful references for building and deploying with Hakyll and gh-pages include:
+
++ http://www.srid.ca/posts/2015-04-24-hakyll-and-circleci.html
++ http://jaspervdj.be/hakyll/

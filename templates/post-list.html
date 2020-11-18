@@ -1,0 +1,18 @@
+<div class="container">
+  <div class= "row">
+    <table class="table table-hover">
+      <tr>
+        <th>Posts</th>
+        <th>Date Created</th>
+        <th>Categories</th>
+      </tr>
+      $for(posts)$
+      <tr>
+        <td><a href="$url$">$title$</a></td>
+        <td>$date$</td>
+        <td>$tags$</td>
+      </tr>
+      $endfor$
+    </table>
+  </div>
+</div>
