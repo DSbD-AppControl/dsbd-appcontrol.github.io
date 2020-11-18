@@ -33,5 +33,6 @@ deploy: build
 #	(cd _site; git config user.name None)
 	(cd _site; git commit -m "Site Generated on `date`")
 	(cd _site; git remote add origin ${REPO})
-	(cd _site; git push -f origin main)
+	(cd _site; git branch -M published)
+	(cd _site; git push -f origin published)
 # ---------------------------------------------------------------------- [ EOF ]

@@ -63,7 +63,9 @@ $ git push
  make deploy
  #+END_SRC
 
- This command builds the static site in =_site= and moves it to the =master= branch which github uses to publish the site.
+ This command builds the static site in =_site= and moves it to the =published= branch which github uses to publish the site.
+
+ All development should happen in the =source= branch.
 
  Please note only those with a commit bit will be allowed to push to the site.
 
