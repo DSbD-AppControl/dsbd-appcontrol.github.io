@@ -33,7 +33,7 @@ $ stack exec site watch
 Point your web browser to http://127.0.0.1:8000/ .
 
 2. To commit changes to the repo and update the
-   https://border-patrol.github.io/ site:
+   https://dsbd-appcontrol.github.io/ site:
 
 #+BEGIN_SRC sh
 $ git add <changed files>
