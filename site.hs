@@ -87,7 +87,7 @@ main = hakyll $ do
 
     match "publications.md" $ do
       route   $ setExtension "html"
-      compile $ pandocBiblioCompiler "fullcite.csl" "publications.bib"
+      compile $ pandocBiblioCompiler "fullcite.csl" "publications.bib"         
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
