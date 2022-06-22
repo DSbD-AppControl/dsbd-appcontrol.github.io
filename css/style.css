@@ -12,7 +12,7 @@ body {
 
 .footer {
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   /* background-color: #000000; */
   color: #ffffff;
@@ -29,12 +29,12 @@ body {
 body > .container {
     padding: 60px 15px 0;
   }
-  
+
 .footer > .container {
     padding-right: 15px;
     padding-left: 15px;
 }
-  
+
 article {
     background-color: #ffffff;
 }
