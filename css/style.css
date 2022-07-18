@@ -89,3 +89,36 @@ blockquote {
 }
 
 /* ------------------------------------------------------------------ [ EOF ] */
+
+
+#glasgow,#essex,#imperial{
+  margin: 2rem 0 0 0;
+}
+
+#logo{
+  width:  150px;
+  height: 60px;
+}
+
+.nav-menu {
+  width: 100%;
+}
+
+.nav-menu, .nav-menu * {
+  /* margin: 0; */
+  padding-top: 0;
+  padding-bottom: 0;
+  list-style: none;
+}
+
+#nav-inner > ul > li {
+  position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+#nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

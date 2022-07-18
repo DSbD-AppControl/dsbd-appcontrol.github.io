@@ -5,6 +5,10 @@ title: Publications
  <br /> <br />
 
 <!-- Here we will list our research output. -->
+### 2022 ###
+* [@CutnerYV22]
+* [@LagaillardieNY22]
+
 ### 2020 ###
 
 * [@de2020framework]
@@ -14,4 +18,3 @@ title: Publications
 * [@de2019typing]
 * [@muijnck2019typing]
 * [@muijnck2019well]
-
