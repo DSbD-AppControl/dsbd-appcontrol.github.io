@@ -1,5 +1,5 @@
 ---
-title: AppControl Project Poster 2021.
+title: AppControl Project Poster 2021
 tags: news,website
 ...
 

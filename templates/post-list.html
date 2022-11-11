@@ -1,18 +1,15 @@
-<div class="container">
-  <div class= "row">
-    <table class="table table-hover">
-      <tr>
-        <th>Posts</th>
-        <th>Date Created</th>
-        <th>Categories</th>
-      </tr>
-      $for(posts)$
-      <tr>
-        <td><a href="$url$">$title$</a></td>
-        <td>$date$</td>
-        <td>$tags$</td>
-      </tr>
-      $endfor$
-    </table>
+<div class="row mb-2">
+  $for(posts)$
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2">$tags$</strong>
+        <h3 class="mb-0">$title$</h3>
+        <div class="mb-1 text-muted">$date$</div>
+        <p class="card-text mb-auto">  </p>
+        <a href="$url$" class="stretched-link">Continue reading</a>
+      </div>
+    </div>
   </div>
+  $endfor$
 </div>

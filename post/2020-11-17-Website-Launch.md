@@ -1,5 +1,5 @@
 ---
-title: Launch of Project Website.
+title: Launch of Project Website
 tags: news,website
 ...
 
