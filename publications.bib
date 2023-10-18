@@ -84,6 +84,25 @@
 }
 
 
+@inproceedings{PoliSZM21,
+  author       = {Ludovico Poli and
+                  Sangeet Saha and
+                  Xiaojun Zhai and
+                  Klaus D. McDonald{-}Maier},
+  title        = {Design and Implementation of a {RISC} {V} Processor on {FPGA}},
+  booktitle    = {17th International Conference on Mobility, Sensing and Networking,
+                  {MSN} 2021, Exeter, United Kingdom, December 13-15, 2021},
+  pages        = {161--166},
+  publisher    = {{IEEE}},
+  year         = {2021},
+  url          = {https://doi.org/10.1109/MSN53354.2021.00037},
+  doi          = {10.1109/MSN53354.2021.00037},
+  timestamp    = {Thu, 21 Apr 2022 15:52:13 +0200},
+  biburl       = {https://dblp.org/rec/conf/msn/PoliSZM21.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+
 @inproceedings{CutnerYV22,
   author    = {Zak Cutner and
                Nobuko Yoshida and
@@ -126,4 +145,80 @@
   timestamp = {Thu, 23 Jun 2022 15:53:59 +0200},
   biburl    = {https://dblp.org/rec/conf/ecoop/LagaillardieNY22.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@InProceedings{BarwellSYZ22,
+  author =	{Barwell, Adam D. and Scalas, Alceste and Yoshida, Nobuko and Zhou, Fangyi},
+  title =	{{Generalised Multiparty Session Types with Crash-Stop Failures}},
+  booktitle =	{33rd International Conference on Concurrency Theory (CONCUR 2022)},
+  pages =	{35:1--35:25},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-246-4},
+  ISSN =	{1868-8969},
+  year =	{2022},
+  volume =	{243},
+  editor =	{Klin, Bartek and Lasota, S{\l}awomir and Muscholl, Anca},
+  publisher =	{Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{https://drops.dagstuhl.de/opus/volltexte/2022/17098},
+  URN =		{urn:nbn:de:0030-drops-170982},
+  doi =		{10.4230/LIPIcs.CONCUR.2022.35},
+  annote =	{Keywords: Session Types, Concurrency, Failure Handling, Model Checking}
+}
+
+@inproceedings{BorowskiSZM22,
+  author       = {Michal Borowski and
+                  Sangeet Saha and
+                  Xiaojun Zhai and
+                  Klaus D. McDonald{-}Maier},
+  title        = {Benchmark Tool for Detecting Anomalous Program Behaviour on Embedded
+                  Devices},
+  booktitle    = {{IEEE} International Conference on Trust, Security and Privacy in
+                  Computing and Communications, TrustCom 2022, Wuhan, China, December
+                  9-11, 2022},
+  pages        = {1187--1192},
+  publisher    = {{IEEE}},
+  year         = {2022},
+  url          = {https://doi.org/10.1109/TrustCom56396.2022.00164},
+  doi          = {10.1109/TrustCom56396.2022.00164},
+  timestamp    = {Mon, 27 Mar 2023 16:44:39 +0200},
+  biburl       = {https://dblp.org/rec/conf/trustcom/BorowskiSZM22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@conference{BarwellSYZ23,
+    title = "Designing asynchronous multiparty protocols with crash-stop failures",
+    abstract = "Session types provide a typing discipline for message-passing systems. However, most session type approaches assume an ideal world: one in which everything is reliable and without failures. Yet this is in stark contrast with distributed systems in the real world. To address this limitation, we introduce Teatrino, a code generation toolchain that utilises asynchronous multiparty session types (MPST) with crash-stop semantics to support failure handling protocols. We augment asynchronous MPST and processes with crash handling branches. Our approach requires no user-level syntax extensions for global types and features a formalisation of global semantics, which captures complex behaviours induced by crashed/crash handling processes. The sound and complete correspondence between global and local type semantics guarantees deadlock-freedom, protocol conformance, and liveness of typed processes in the presence of crashes. Our theory is implemented in the toolchain Teatrino, which provides correctness by construction. Teatrino extends the Scribble multiparty protocol language to generate protocol-conforming Scala code, using the Effpi concurrent programming library. In Teatrino, both Scribble and Effpi are extended to support crash-stop behaviour. We demonstrate the feasibility of our methodology and evaluate Teatrino with examples extended from both session type and distributed systems literature.",
+    keywords = "Session types, Concurrency, Failure handling, Code generation, Scala",
+    author = "Barwell, {Adam David} and Ping Hou and Nobuko Yoshida and Fangyi Zhou",
+    note = "Funding: Funding The work is supported by EPSRC EP/T006544/2, EP/K011715/1, EP/K034413/1, EP/L00058X/1, EP/N027833/2, EP/N028201/1, EP/T014709/2, EP/V000462/1, EP/X015955/1, NCSS/EPSRC VeTSS, and Horizon EU TaRDIS 101093006. ; 37th European Conference on Object-Oriented Programming, ECOOP23 ; Conference date: 17-07-2023 Through 21-07-2023",
+    year = "2023",
+    month = jul,
+    day = "11",
+    doi = "10.4230/LIPIcs.ECOOP.2023.1",
+    language = "English",
+    pages = "1:1--1:30",
+    url = "https://2023.ecoop.org",
+}
+
+@inproceedings{BorowskiPSPZM23,
+  author       = {Michal Borowski and
+                  Chandrajit Pal and
+                  Sangeet Saha and
+                  Ludovico Poli and
+                  Xiaojun Zhai and
+                  Klaus D. McDonald{-}Maier},
+  title        = {Anomaly Behaviour tracing of {CHERI-RISC} {V} using Hardware-Software
+                  Co-design},
+  booktitle    = {21st {IEEE} Interregional {NEWCAS} Conference, {NEWCAS} 2023, Edinburgh,
+                  United Kingdom, June 26-28, 2023},
+  pages        = {1--5},
+  publisher    = {{IEEE}},
+  year         = {2023},
+  url          = {https://doi.org/10.1109/NEWCAS57931.2023.10198103},
+  doi          = {10.1109/NEWCAS57931.2023.10198103},
+  timestamp    = {Tue, 15 Aug 2023 11:43:59 +0200},
+  biburl       = {https://dblp.org/rec/conf/newcas/BorowskiPSPZM23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
