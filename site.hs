@@ -64,7 +64,7 @@ main = hakyll $ do
 
     match "post/*.md" $ do
       route $ setExtension "html"
-      compile $ pandocBiblioCompiler "style.csl" "biblio.bib"
+      compile $ pandocBiblioCompiler "ieee.csl" "biblio.bib"
         >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
         >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls

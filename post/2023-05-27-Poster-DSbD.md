@@ -1,5 +1,3 @@
-
-
 ---
 title: AppControl Project Poster May 2023
 tags: news,website
