@@ -39,14 +39,21 @@
   <main role="main" class="container container-fluid">
     <div class="content">
       <h1>Towards a better memory management API - Part 2</h1>
-      <div class="info">
-    Posted on May 18, 2024
-    
-        by Cristian Urlea
-    
-</div>
-
-<h2 id="abstract">Abstract</h2>
+      <div class="wrapper">
+    <div class="well mdata">
+        <p>
+            Posted on May 18, 2024
+            
+            by Cristian Urlea
+            
+        <p>
+        <p>
+            
+            Categories: morello-hat
+            
+        </p>
+    </div>
+    <h2 id="abstract">Abstract</h2>
 <p>Currently, the Morello stack supports C and C++ and as such, the capability API is very low-level and pointer-oriented. There are, however, many promising modern languages with fast-growing popularity (e.g. Go, Rust, Dart, etc.) that are not pointer-based and have different type systems and memory management strategies.</p>
 <p>This raises the question of how to best support such languages such languages on CHERI-extended architectures, and in particular if we can design better APIs for memory management such that these languages can make better use of CHERI capabilities.</p>
 <p>In this post we investigate the current approaches to memory allocation in slightly more detail, and explore some options for designing a better, more intentional, memory management API.</p>
@@ -173,7 +180,7 @@
 <p>In the following post we will go over some of the basics of behavioral types and their encoding in the Rust language to see how further performance and security benefits could be derived.</p>
 <p>With a view to that future, let us consider a motivating scenario where a client application makes liberal use of both the existing <code>allocate_zeroed()</code> method as well as the newly proposed <code>deallocate_zeroed()</code>. Clearly it would be wasteful to zero out memory, upon allocation, if said memory can be guaranteed to have been zeroed out previously, during a deallocation event.</p>
 <p>Optimizing for such scenarios, however, requires more drastic changes to the memory allocation API.</p>
-
+</div>
     </div>
   </main>
 

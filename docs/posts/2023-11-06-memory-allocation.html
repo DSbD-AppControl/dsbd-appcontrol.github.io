@@ -39,14 +39,21 @@
   <main role="main" class="container container-fluid">
     <div class="content">
       <h1>Towards a better memory management API - Part 1</h1>
-      <div class="info">
-    Posted on November  6, 2023
-    
-        by Cristian Urlea
-    
-</div>
-
-<h2 id="abstract">Abstract</h2>
+      <div class="wrapper">
+    <div class="well mdata">
+        <p>
+            Posted on November  6, 2023
+            
+            by Cristian Urlea
+            
+        <p>
+        <p>
+            
+            Categories: morello-hat
+            
+        </p>
+    </div>
+    <h2 id="abstract">Abstract</h2>
 <p>Currently, the Morello stack supports C and C++ and as such, the capability API is very low-level and pointer-oriented. There are, however, many promising modern languages with fast-growing popularity (e.g. Go, Rust, Dart, etc.) that are not pointer-based and have different type systems and memory management strategies.</p>
 <p>This raises the question of how to best support such languages such languages on CHERI-extended architectures, and in particular if we can design better APIs for memory management such that these languages can make better use of CHERI capabilities.</p>
 <p>In this post we will go over some of the design considerations hiding behind this question, and attempt to lay the groundwork for better memory management APIs.</p>
@@ -369,7 +376,7 @@ Normally, one may thing that every heap allocation would have to be immediately 
 <h5 id="reference-counting">Reference Counting</h5>
 <p>As the <code>lifetime</code> mechanism in Rust is enforced at compile time, this presents a problem: it requires that memory allocations are used and freed in a Last-In-First-Out order, consistent with the operation of the stack and the borrow rules that apply. The requirement that every allocation have a single owner is particularly troublesome for certain types of application.</p>
 <p>For situations where more flexibility is required, rust provides the <code>Rc&lt;T&gt;</code> type which provides a reference counting implementation, allowing for allocations with multiple owners which are safely freed when their owner count drops to zero.</p>
-
+</div>
     </div>
   </main>
 
