@@ -1,5 +1,6 @@
 ---
 title: Launch of Project Website
+tags: morello-hat
 ---
 
 The website for the project is now live.

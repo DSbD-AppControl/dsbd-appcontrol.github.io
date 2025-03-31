@@ -1,6 +1,7 @@
 ---
 title: Towards a better memory management API - Part 1
 author: Cristian Urlea
+tags: morello-hat
 ---
 
 ## Abstract 
