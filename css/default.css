@@ -234,7 +234,7 @@ a:hover {
 
 #hero {
   width: 100%;
-  height: 30vh;
+  height: 250px;
   position: relative;
   background: url("../images/wv-site-banner_1600.jpg");
   background-size: cover;
