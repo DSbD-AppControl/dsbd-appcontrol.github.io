@@ -85,6 +85,7 @@ main = hakyllWith config $ do
 
   match "*.bib" $ compile biblioCompiler
   match "*.csl" $ compile cslCompiler
+  match "tex/*.csl" $ compile cslCompiler
 
   create ["css/syntax.css"] $ do
     route idRoute
@@ -100,6 +101,13 @@ main = hakyllWith config $ do
   match "images/*" $ do
     route idRoute
     compile copyFileCompiler
+
+  match "artwork/*" $ do
+      route idRoute
+      compile copyFileCompiler
+  match "media/*" $ do
+      route idRoute
+      compile copyFileCompiler
 
   match "css/*" $ do
     route idRoute
@@ -125,7 +133,7 @@ main = hakyllWith config $ do
   match "posts/*" $ do
     route $ setExtension "html"
     compile $
-      pandocBibCompiler
+      pandocBiblioCompiler "tex/ieee.csl" "biblio.bib"
         >>= loadAndApplyTemplate "templates/post.html" postCtx
         >>= loadAndApplyTemplate "templates/default.html" postCtx
         >>= relativizeUrls
@@ -156,6 +164,19 @@ main = hakyllWith config $ do
         >>= applyAsTemplate indexCtx
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
+
+  match "publications.md" $ do
+    route   $ setExtension "html"
+    compile $ pandocBiblioCompiler "tex/fullcite.csl" "publications.bib"
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
+          >>= relativizeUrls
+
+  match "*.md" $ do
+    route   $ setExtension "html"
+    compile $ pandocCompiler
+          >>= applyAsTemplate defaultContext
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
+          >>= relativizeUrls
 
   match "templates/*" $ compile templateCompiler
 
