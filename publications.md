@@ -8,6 +8,7 @@ title: Publications
 ### 2023 ###
 * [@BarwellSYZ23]
 * [@BorowskiPSPZM23]
+* [@castro2023dynamically]
 
 
 ### 2022 ###
@@ -15,6 +16,7 @@ title: Publications
 * [@LagaillardieNY22]
 * [@BarwellSYZ22]
 * [@BorowskiSZM22]
+* [@ellis2022generic]
 
 ### 2021 ###
 * [@PoliSZM21]

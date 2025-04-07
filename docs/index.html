@@ -46,90 +46,158 @@
     <div class="hero-content" data-aos="fade-up"> </div>
 </section>
 
-<h2>What is AppControl?</h2>
 
-<p>The AppControl project enhances Digital Security By Design (DSbD) for mission-critical Systems-on-Chip. It uses the
-    capabilities provided by the CHERI architecture to enable Design-by-Specification: the Systems-on-Chip has a formal,
-    executable specification (typically created by the system architect), and every software component of the SoC is
-    forced to adhere to this specification. Programs with incompatible specifications cannot run; unspecified run-time
-    behaviour will raise an exception. The practical realisation is through the extension of programming languages to
-    supports expressive specifications and a toolchain which ensures that the specifications are enforced at run time on
-    Capability hardware. Our project was funded by the Digital Security by Design (DSbD) Programme delivered by UKRI to
-    support the DSbD ecosystem.</p>
-
-<h2>The Problem</h2>
-
-<p>With the current state of the art, it is possible to limit the access privileges of a third-party program running on
-    a computer system. The addition of architectural capabilities such as provided by CHERI enable unprecedented
-    fine-grained memory protection and isolation. These mechanisms are however not sufficient to control the behaviour
-    of a program so that it follows the intended specification. For example, if a program performs network access, it is
-    not possible to ensure that the network location accessed is intended by the developer, or the result of a backdoor
-    in the system. In general, this is the case for any system call performed by the program. As a result, malicious
-    programs can e.g. participate in DDoS attacks, or send information about the system to a Command and Control server,
-    etc. It is also the case for library calls, which could perform unspecified actions within the memory space of a
-    process.
-</p>
+<section>
 
 
-<h2>The Aim</h2>
-<p>
-    The aim of this project is to enhance the provision of Digital Security By Design for mission-critical
-    Systems-on-Chip through Capability hardware-enabled Design-by-Specification. What this means is that the
-    Systems-on-Chip has a formal, executable specification (typically created by the system architect), and every
-    software component of the SoC is forced to adhere to this specification. Programs with incompatible specifications
-    cannot run; unspecified run-time behaviour will raise an exception. For the above example, the specification could
-    govern the network access and also the access to system information. The practical realisation of this aim is
-    through the extension of programming languages to supports expressive specifications and a toolchain which ensures
-    that the specifications are enforced at run time on Capability hardware.
-</p>
+    <p>
+        This is the home for <b>AppControl</b> and <b>Morello-HAT</b>, two closely related projects which aim to enhance
+        the
+        security of mission-critical Systems-on-Chip (SoC) through the integration of capability hardware and
+        behavioural
+        types. They are a collaboration between the University of Glasgow, the University of Essex and the University of
+        Oxford and are funded by the UKRI Digital Security by Design (DSbD) programme.
+    </p>
+
+    <h2>The Vision</h2>
+
+    <p>
+        The idea behind the <b>AppControl</b> project is to use behavioural type systems to formally describe the
+        interfaces and interaction of software components in Systems-on-Chip (SoC) and enforce these specifications
+        at run time through the hardware capabilities provided by the CHERI architecture.
+    </p>
 
 
 
-<h2>What is Morello-HAT?</h2>
+    <p> The <b>Morello-HAT</b> project is a companion to AppControl which further narrows down the focus to the
+        development of common APIs that leverage the hardware capabilities implemented by the Morello
+        architecture alongside behavioural types. The primary goal is to support compiler developers and programmers of
+        higher-level languages in obtaining better memory and object type safety properties in their respective
+        languages and programs.
+    </p>
 
-<p> The Morello-HAT project intends to create and evaluate a common API that can be used by
-    compiler developers as well as programmers of higher-level languages,
-    to allow them to leverage Morello’s hardware capabilities to improve memory
-    security and type safety, spatial as well as temporal, of their language and programs.
-</p>
+    <p>
+        The Morello software stack primarily supports programming through the C and C++ languages. The
+        capability
+        API for these languages is based on a low-level representation of capability pointers which leaves
+        plenty of
+        room for improvement.
+        In contrast, there are many promising modern languages with fast-growing popularity (e.g. Go, Rust,
+        Dart,)
+        that are not pointer-based and support more advanced type systems and memory management strategies. It
+        is
+        therefore important for the success of the Morello platform that it supports such languages.
+
+        There is a wide gap between the current low-level, C-focused capability API and the needs of
+        higher-level
+        languages, and that is the gap which this project aims to fill.
+    </p>
 
 
-<h2> Motivation </h2>
+    <h2>What can AppControl and Morello-HAT do for you?</h2>
 
-<p>
-    Currently, the Morello stack supports C and C++ and the capability API is
-    very low-level and pointer-oriented. There are many promising modern
-    languages with fast-growing popularity (e.g. Go, Rust, Dart,) that are
-    not pointer-based and have different type systems and memory management
-    strategies. It is important for the success of the platform that it
-    supports such languages. There is a wide gap between the current low-level,
-    C-focused capability API and the needs of higher-level languages, and that
-    is the gap which this project aims to fill.
-</p>
 
-<p>
-    The libraries and tools we will develop as the key deliverables of this
-    project will make it much easier for programming language developers,
-    compiler writers and programmers to incorporate support for Morello's
-    hardware capabilities into their language ecosystems. As a result,
-    applications developed in those modern, fast-growing languages such as
-    Rust, Go and Dart, as well as future languages, can be ported quickly
-    to Morello.
-</p>
+    <p>In practical terms, AppControl allows a SoC's system architect to create a formal, executable specification that
+        describes the expected behaviour of each software component. Enforcing this specification at run time ensures
+        brings several benefits:
+    <ul>
+        <li> <b>Security</b>: By enforcing the expected behaviour of software components, we can prevent malicious
+            or
+            unintended actions that could compromise the system's integrity.</li>
+        <li> <b>Reliability</b>: Ensuring that software components adhere to their specifications reduces the risk
+            of
+            unexpected behaviour and system failures.</li>
+        <li> <b>Maintainability</b>: A formal specification provides a clear contract for each software component,
+            making it
+            easier to understand and maintain the system as a whole.</li>
+        <li> <b>Interoperability</b>: By defining clear interfaces and interactions, we can ensure that different
+            software
+            components can work together seamlessly, even if they are developed by different teams or organizations.
+        </li>
+    </ul>
+    </p>
 
-<p>
-    The vulnerability detection and mitigation part of the project will
-    demonstrate the effectiveness of our libraries and tools in mitigating
-    exploits through the use of hardware capabilities. In addition, current
-    debug tools heavily rely on high levels of privilege to operate,
-    and with the debug host and debug target located on the same chip,
-    sharing the same memory and registers and reusing the same debug
-    authentication mechanisms leads to the privilege escalation, we
-    therefore will provide a comprehensive defence mechanism across different
-    roles in the ecosystem by introducing an additional security restriction
-    in the Morello stack.
-</p>
+    <!-- <p>
 
+
+        <h2>The Problem</h2>
+
+        <p>With the current state of the art, it is possible to limit the access privileges of a third-party program
+            running
+            on
+            a computer system. The addition of architectural capabilities such as provided by CHERI enable unprecedented
+            fine-grained memory protection and isolation. These mechanisms are however not sufficient to control the
+            behaviour
+            of a program so that it follows the intended specification. For example, if a program performs network
+            access,
+            it is
+            not possible to ensure that the network location accessed is intended by the developer, or the result of a
+            backdoor
+            in the system. In general, this is the case for any system call performed by the program. As a result,
+            malicious
+            programs can e.g. participate in DDoS attacks, or send information about the system to a Command and Control
+            server,
+            etc. It is also the case for library calls, which could perform unspecified actions within the memory space
+            of a
+            process.
+        </p>
+
+
+        <h2>The Aim</h2>
+        <p>
+            The aim of this project is to enhance the provision of Digital Security By Design for mission-critical
+            Systems-on-Chip through Capability hardware-enabled Design-by-Specification. What this means is that the
+            Systems-on-Chip has a formal, executable specification (typically created by the system architect), and
+            every
+            software component of the SoC is forced to adhere to this specification. Programs with incompatible
+            specifications
+            cannot run; unspecified run-time behaviour will raise an exception. For the above example, the specification
+            could
+            govern the network access and also the access to system information. The practical realisation of this aim
+            is
+            through the extension of programming languages to supports expressive specifications and a toolchain which
+            ensures
+            that the specifications are enforced at run time on Capability hardware.
+        </p>
+
+
+
+        <h2>What is Morello-HAT?</h2>
+
+        <p> The Morello-HAT project intends to create and evaluate a common API that can be used by
+            compiler developers as well as programmers of higher-level languages,
+            to allow them to leverage Morello’s hardware capabilities to improve memory
+            security and type safety, spatial as well as temporal, of their language and programs.
+        </p>
+
+
+        <h2> Motivation </h2>
+
+
+
+        <p>
+            The libraries and tools we will develop as the key deliverables of this
+            project will make it much easier for programming language developers,
+            compiler writers and programmers to incorporate support for Morello's
+            hardware capabilities into their language ecosystems. As a result,
+            applications developed in those modern, fast-growing languages such as
+            Rust, Go and Dart, as well as future languages, can be ported quickly
+            to Morello.
+        </p>
+
+        <p>
+            The vulnerability detection and mitigation part of the project will
+            demonstrate the effectiveness of our libraries and tools in mitigating
+            exploits through the use of hardware capabilities. In addition, current
+            debug tools heavily rely on high levels of privilege to operate,
+            and with the debug host and debug target located on the same chip,
+            sharing the same memory and registers and reusing the same debug
+            authentication mechanisms leads to the privilege escalation, we
+            therefore will provide a comprehensive defence mechanism across different
+            roles in the ecosystem by introducing an additional security restriction
+            in the Morello stack.
+        </p> -->
+</section>
 <h2>Recent Posts</h2>
 
 <div class="row mb-2">
