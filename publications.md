@@ -5,6 +5,17 @@ title: Publications
  <br /> <br />
 
 <!-- Here we will list our research output. -->
+
+### 2025 ###
+* [@pal2025renowned]
+
+### 2024 ###
+* [@DBLP:conf/coins/PalSZM24]
+* [@DBLP:conf/ecoop/HouLY24]
+* [@DBLP:conf/ecoop/VassorY24]
+* [@DBLP:series/lncs/YoshidaH24]
+* [@DBLP:conf/itp/EkiciY24]
+
 ### 2023 ###
 * [@BarwellSYZ23]
 * [@BorowskiPSPZM23]
